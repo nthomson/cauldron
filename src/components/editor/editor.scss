@@ -1,8 +1,39 @@
 .editor {
+    .page > .add-btns {
+        position: absolute;
+        width: 150px;
+        right: -150px;
+        top: 0;
+    }
+
+    .col50 > .add-btns {
+        // border: 1px red solid;
+    }
     .btn {
         display: block;
         margin: 20px auto;
-        width: 100px;
+        width: auto;
         line-height: 30px;
+        background: white;
+        border: none;
+        padding: 10px;
+        line-height: 1;
+        cursor: pointer;
+
+        &-add {
+            display: block;
+            width: 100%;
+            margin: 0;
+            
+            &:hover {
+                background: #eee;
+            }
+        }
+    }
+}
+
+@media print {
+    button, .btn, .add-btns {
+        display: none !important;
     }
 }

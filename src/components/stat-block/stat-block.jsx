@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import './stat-block.scss';
 
 import useDataFetcher from '../../utils/use-data-fetcher';
 import monsterUtils from '../../utils/monster-utils';
+import { MonsterSearch } from '../';
+
+import './stat-block.scss';
 
 const StatBlock = ({ monsterId }) => {
     const [ id, setId ] = useState(monsterId);
     const [ val, setVal ] = useState();
-    const { monster, fetching } = useDataFetcher({ type: 'monsters', id });
+    const { result: monster, fetching } = useDataFetcher({ type: 'monsters', id });
 
     if (!id) {
         return (
-            <div>
-                <input type='text' value={val} onChange={(e) => { setVal(e.target.value); }} />
-                <button type='button' onClick={() => { setId(val); }}>Go</button>
-            </div>
+            <MonsterSearch onSelectMonster={setId} />
         );
     }
 

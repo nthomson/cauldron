@@ -6,7 +6,7 @@ import './editor.scss';
 const Editor = () => {
     const [brew, setBrew] = useState([]);
 
-    const addCol = (item) => {
+    const addCol = (item, size) => {
         item.children = [
             ...(item.children || []),
             { element: 'col', size: '50' }
@@ -17,7 +17,7 @@ const Editor = () => {
     const addStat = (item) => {
         item.children = [
             ...(item.children || []),
-            { element: 'statBlock', monsterId: 50 }
+            { element: 'statBlock' }
         ];
         setBrew([...brew]);
     };
@@ -29,6 +29,10 @@ const Editor = () => {
         ];
         setBrew([...brew]);
     };
+
+    const removeEle = (item) => {
+        
+    }
 
     const addPage = () => {
         setBrew([
@@ -69,8 +73,13 @@ const Editor = () => {
             <Element {...props} key={index}>
                 { Array.isArray(eleChildren) ? eleChildren.map(itemRender) : eleChildren }
                 { addBtns
-                    ? addBtns.map(btn => <button onClick={() => { btn.fn(item, btn.type); }}>+{btn.type}</button>)
-                    : null }
+                    ? <p className='add-btns'>
+                        { addBtns.map(b => (
+                            <button className='btn btn-add' onClick={() => { b.fn(item, b.type); }}>
+                                +{b.type}
+                            </button>
+                        )) }
+                    </p> : null }
             </Element>
         );
     }
