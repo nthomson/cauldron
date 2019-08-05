@@ -1,0 +1,32 @@
+.stat-block {
+  margin-top: 20px;
+  padding: 15px 0;
+  border: 5px darkred solid;
+  border-left: none;
+  border-right: none;
+
+  pre {
+    white-space: pre-wrap;
+  }
+
+  .block {
+    border: 2px darkred solid;
+    border-left: none;
+    border-right: none;
+    margin: 6px 0;
+    padding: 3px 0;
+  }
+  .size {
+    font-style: italic;
+  }
+  .ability-scores {
+    display: flex;
+    padding: 5px 0;
+  }
+  .ability-scores .ability-name {
+    font-weight: bold;
+  }
+  .ability-scores .ability {
+    flex: 1;
+  }
+}

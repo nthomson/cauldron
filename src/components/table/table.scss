@@ -1,0 +1,15 @@
+.table {
+  border: none;
+}
+.table th {
+  font-weight: bold;
+  font-size: 14px;
+}
+.table td,
+.table th {
+  text-align: left;
+  padding: 3px 10px;
+}
+.table tbody tr:nth-child(2n-1) {
+  background: rgb(218, 191, 156);
+}

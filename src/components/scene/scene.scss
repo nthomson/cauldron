@@ -1,0 +1,32 @@
+.scene {
+  background: rgb(218, 191, 156);
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px darkred solid;
+  border-top: none;
+  border-bottom: none;
+  position: relative;
+
+  // &::after, &::before {
+  //   content: '';
+  //   position: absolute;
+  //   border: 15px transparent solid;
+  // }
+
+  // &::before {
+  //   border-right-color: darkred;
+  //   border-right-width: 7px;
+  //   border-bottom-width: 0;
+  //   left: -24px;
+  //   top: 0;
+  // }
+
+  // &::after {
+  //   border-right-color: darkred;
+  //   border-right-width: 7px;
+  //   border-top-width: 0;
+  //   left: -24px;
+  //   bottom: 0;
+  // }
+
+}
