@@ -3,11 +3,12 @@ import './item.scss';
 
 const Item = ({ name, type, children }) => (
     <div className='item'>
-        <h4>{name}</h4>
-        <div className='type'>{type}</div>
-        <div className='description'>
-            {children}
-        </div>
+        { name ? <h4>{name}</h4> : null }
+        { type ? <div className='type'>{type}</div> : null }
+        { children ? 
+            <div className='description'>
+                {children}
+            </div> : null }
     </div>
 );
 
