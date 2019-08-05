@@ -1,5 +1,9 @@
 .site-header {
-    background: #222;
+    background: #201818;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
 }
 .app-header {
     display: flex;
@@ -13,7 +17,7 @@
 
         flex-basis: 155px;
         padding-left: 55px;
-        font-size: 26px;
+        font-size: 30px;
         justify-content: center;
         align-items: center;
         display: flex;
@@ -48,5 +52,11 @@
                 width: 100%;
             }
         }
+    }
+}
+
+@media print {
+    .site-header {
+        display: none;
     }
 }
