@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './stat-block.scss';
 
 import useDataFetcher from '../../utils/use-data-fetcher';
 import monsterUtils from '../../utils/monster-utils';
 
 const StatBlock = ({ monsterId }) => {
-    const { monster, fetching } = useDataFetcher({ type: 'monsters', id: monsterId });
+    const [ id, setId ] = useState(monsterId);
+    const [ val, setVal ] = useState();
+    const { monster, fetching } = useDataFetcher({ type: 'monsters', id });
 
-    return (!fetching
+    if (!id) {
+        return (
+            <div>
+                <input type='text' value={val} onChange={(e) => { setVal(e.target.value); }} />
+                <button type='button' onClick={() => { setId(val); }}>Go</button>
+            </div>
+        );
+    }
+
+    return (!fetching && monster
         ? <div className='stat-block'>
             <h1>{monster.name}</h1>
             <div className='size'>{monster.size} {monster.type}, {monster.alignment}</div>
@@ -56,13 +67,14 @@ const StatBlock = ({ monsterId }) => {
                 {monster.languages ? <li><strong>Languages</strong> {monster.languages}</li> : null}
                 <li><strong>Challenge</strong> {monster.challenge_rating}</li>
             </ul>
-            <ul className='special'>
-                {monster.special_abilities.map(ability => (
-                    <div key={ability.name}>
-                        <strong>{ability.name}</strong>
-                        <pre>{ability.desc}</pre></div>
-                ))}
-            </ul>
+             { monster.special_abilities ?
+                <ul className='special'>
+                    {monster.special_abilities.map(ability => (
+                        <div key={ability.name}>
+                            <strong>{ability.name}</strong>
+                            <pre>{ability.desc}</pre></div>
+                    ))}
+                </ul> : null }
             <h2>Actions</h2>
             <div className='action'>
                 {monster.actions.map(action => (

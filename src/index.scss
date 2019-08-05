@@ -1,24 +1,17 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-body {
   background: #eee;
   font-family: "Libre Baskerville", serif;
   color: #333;
   font-size: 12px;
   line-height: 1.5;
-  /* text-shadow: chocolate 0 0 2px; */
+  overflow-y: scroll;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 strong {
   font-weight: bold;
