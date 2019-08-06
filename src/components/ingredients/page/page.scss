@@ -7,6 +7,11 @@
   box-sizing: border-box;
   padding: 15px;
   position: relative;
+
+  & > .element-btns {
+    left: 100%;
+    right: auto;
+  }
 }
 
 @media print {

@@ -4,6 +4,12 @@
   border: 5px darkred solid;
   border-left: none;
   border-right: none;
+  min-height: 50px;
+
+  & > .element-btns {
+    right: 15px;
+    top: 15px;
+  }
 
   pre {
     white-space: pre-wrap;

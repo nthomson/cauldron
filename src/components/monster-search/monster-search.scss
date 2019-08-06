@@ -1,0 +1,27 @@
+.monster-search {
+    input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px #aaa solid;
+    }
+
+    .search-results {
+        background: white;
+        margin: 0;
+        border: 1px #aaa solid;
+        margin-top: 5px;
+        padding: 0 1px;
+
+        li {
+            box-sizing: border-box;
+            padding: 8px;
+            border-bottom: 1px #eee solid;
+
+            &:hover {
+                cursor: pointer;
+                background: #eee;
+            }
+        }
+    }
+}

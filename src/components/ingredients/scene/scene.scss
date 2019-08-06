@@ -7,6 +7,11 @@
   border-bottom: none;
   position: relative;
 
+  & > .element-btns {
+    top: 5px !important;
+    right: 5px !important;
+  }
+
   // &::after, &::before {
   //   content: '';
   //   position: absolute;

@@ -1,5 +1,10 @@
 .table {
   border: none;
+
+  & > .element-btns {
+    top: 0 !important;
+    right: 0 !important;
+  }
 }
 .table th {
   font-weight: bold;

@@ -23,17 +23,20 @@ em {
 
 .page {
   font-family: "Libre Baskerville", serif;
-  .col50,
-  .col100 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+
+  .col {
     box-sizing: border-box;
     padding: 5px 15px;
-    float: left;
   }
-  .col100 {
-    width: 100%;
+  .col-100 {
+    flex-basis: 100%;
   }
-  .col50 {
-    width: 50%;
+  .col-50 {
+    flex-basis: 50%;
   }
   p {
     margin-top: 10px;
@@ -68,5 +71,10 @@ em {
 @media print {
   body {
     padding: 0;
+  }
+
+  .col50,
+  .col100 {
+    background: none;
   }
 }

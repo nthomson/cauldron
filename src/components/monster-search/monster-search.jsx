@@ -11,7 +11,7 @@ const MonsterSearch = ({ onSelectMonster }) => {
             <input type='text' value={term} onChange={e => { setTerm(e.target.value); }} />
             { !fetching
                 ? <ul className='search-results'>
-                    { results.map(result => (
+                    { results.slice(0, 10).map(result => (
                         <li onClick={() => { onSelectMonster(result.index); }}>{result.name}</li>
                     )) }
                 </ul> : null }

@@ -1,0 +1,35 @@
+.btn {
+    line-height: 30px;
+    background: white;
+    border: none;
+    padding: 10px;
+    line-height: 1;
+    cursor: pointer;
+
+    &-block {
+        display: block;
+    }
+
+    &-add {
+        display: inline-block;
+        font-size: 12px;
+        flex: 1;
+        height: 35px;
+        border-right: 1px #ccc solid;
+        margin: 0;
+
+        &:last-child {
+            border-right: none;
+        }
+        
+        &:hover {
+            background: #eee;
+        }
+    }
+
+    &-icon {
+        border: none;
+        background: none;
+        padding: 0;
+    }
+}

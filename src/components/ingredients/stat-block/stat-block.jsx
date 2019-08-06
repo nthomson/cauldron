@@ -1,24 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import classnames from 'classnames';
 
-import useDataFetcher from '../../utils/use-data-fetcher';
-import monsterUtils from '../../utils/monster-utils';
-import { MonsterSearch } from '../';
+import useDataFetcher from '../../../utils/use-data-fetcher';
+import monsterUtils from '../../../utils/monster-utils';
+// import MonsterSearch from '../../monster-search';
 
 import './stat-block.scss';
 
-const StatBlock = ({ monsterId }) => {
+const StatBlock = ({ monsterId, onSelectMonster, className, btns }) => {
     const [ id, setId ] = useState(monsterId);
-    const [ val, setVal ] = useState();
     const { result: monster, fetching } = useDataFetcher({ type: 'monsters', id });
+
+    useEffect(() => {
+        setId(monsterId);
+    }, [monsterId])
 
     if (!id) {
         return (
-            <MonsterSearch onSelectMonster={setId} />
+            <div className={classnames('stat-block', className)}>
+                {/* <MonsterSearch onSelectMonster={setMonster} /> */}
+                { btns }
+            </div>
         );
     }
 
     return (!fetching && monster
-        ? <div className='stat-block'>
+        ? <div className={classnames('stat-block', className)}>
             <h1>{monster.name}</h1>
             <div className='size'>{monster.size} {monster.type}, {monster.alignment}</div>
             <ul className='block'>
@@ -82,6 +89,7 @@ const StatBlock = ({ monsterId }) => {
                     </p>
                 ))}
             </div>
+            { btns }
         </div>
         : null);
 };

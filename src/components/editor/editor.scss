@@ -1,39 +1,60 @@
 .editor {
-    .page > .add-btns {
-        position: absolute;
-        width: 150px;
-        right: -150px;
-        top: 0;
+    .page {
+        margin-left: 20px;
     }
+    .ingredient {
+        border: 1px transparent dashed;
 
-    .col50 > .add-btns {
-        // border: 1px red solid;
-    }
-    .btn {
-        display: block;
-        margin: 20px auto;
-        width: auto;
-        line-height: 30px;
-        background: white;
-        border: none;
-        padding: 10px;
-        line-height: 1;
-        cursor: pointer;
+        position: relative;
+        .element-btns {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            opacity: 0;
+            transition: opacity 250ms;
 
-        &-add {
-            display: block;
-            width: 100%;
-            margin: 0;
-            
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .add-btns {
+            display: flex;
+            flex-direction: column;
+
+            button {
+                opacity: 0;
+                display: none;
+            }
+
             &:hover {
-                background: #eee;
+                button {
+                    display: inline-block;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:hover {
+            border: 1px #333 dashed;
+            & > .element-btns {
+                opacity: 1;
             }
         }
     }
+    
+    
 }
 
 @media print {
     button, .btn, .add-btns {
         display: none !important;
+    }
+
+    .editor-element::after {
+        display: none;
+    }
+
+    .editor .page {
+        margin: 0;
     }
 }

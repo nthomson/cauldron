@@ -1,0 +1,16 @@
+.item-editor {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    height: calc(100vh - 70px);
+    width: 250px;
+    background: white;
+    border-left: 1px #ccc solid;
+    padding: 20px;
+}
+
+@media print {
+    .item-editor {
+        display: none;
+    }
+}
